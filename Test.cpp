@@ -315,5 +315,57 @@ TEST_CASE("normal operation")
         CHECK_NOTTHROWS(captain.coup(duke));
         contessa.block(captain);
         CHECK_NOTTHROWS(contessa.coup(duke));
+    }
+    SUBCASE("the winner should only be chosen when the game is over") 
     {
+        Game game_1{};
+        Assassin assassin{game_1, "Yossi"};
+        Duke duke{game_1, "Moshe"};
+	    Ambassador ambassador{game_1, "Meirav"};
+	    Captain captain{game_1, "Reut"};
+	    Contessa contessa{game_1, "Gilad"};
+        assassin.foreign_aid();
+        duke.foreign_aid();
+        ambassador.foreign_aid();
+        captain.foreign_aid();
+        contessa.foreign_aid();
+
+        assassin.foreign_aid();
+        duke.foreign_aid();
+        ambassador.foreign_aid();
+        captain.foreign_aid();
+        contessa.foreign_aid();
+
+        assassin.foreign_aid();
+        duke.foreign_aid();
+        ambassador.foreign_aid();
+        captain.foreign_aid();
+        contessa.foreign_aid();
+
+        assassin.foreign_aid();
+        duke.foreign_aid();
+        ambassador.foreign_aid();
+        captain.foreign_aid();
+        contessa.foreign_aid();
+        
+        CHECK_THROWS(game_1.winner());
+        CHECK_NOTTHROWS(assassin.coup(duke));
+        CHECK_THROWS(game_1.winner());
+        CHECK_NOTTHROWS(ambassador.coup(captain));
+        CHECK_THROWS(game_1.winner());
+        CHECK_NOTTHROWS(contessa.coup(ambassador));
+        CHECK_THROWS(game_1.winner());
+        CHECK_NOTTHROWS(assassin.coup(contessa));
+        // now only the assassin is left alive, hence he won the game.
+        CHECK_NOTTHROWS(game_1.winner());
+
+        Game game_2{};
+        Assassin assassin2{game_2, "Yossi"};
+        ASSERT_EQUALS(game_1.winner() == "Yossi");
+        
+        Game game_3{};
+        Assassin assassin3{game_3, "Yossi"};
+        Duke duke3{game_3, "Moshe"};
+        CHECK_THROWS(game_3.winner());
+    }
 }
