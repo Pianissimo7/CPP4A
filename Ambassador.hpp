@@ -1,4 +1,5 @@
-#include "Ambassador.cpp"
+#include <string>
+#include "Player.hpp"
 
 namespace coup {
     class Ambassador : public Player {

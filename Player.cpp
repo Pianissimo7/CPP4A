@@ -1,29 +1,30 @@
-// #include <stdio.h>
-// #include <iostream>
-// #include <stdexcept>
+#include <stdio.h>
+#include <iostream>
+#include <stdexcept>
 #include <string>
+#include "Player.hpp"
 
-// using namespace std;
-// using namespace coup;
+using namespace std;
+using namespace coup;
 
-// Player::Player(string role_name) {
-//     this->role_name = role_name;
-// }
-// Player::~Player() {
-
-// }
-// int Player::coins() {
-//     return this->balance;
-// }
-// string Player::role() {
-//     return this->role_name;
-// }
-// void Player::income() {
-//     this->balance++;
-// }
-// void Player::foreign_aid() {
-//     this->balance += 2;
-// }
-// void Player::coup(Player p) {
+Player::Player(string role_name) {
     
-// }
+}
+Player::~Player() {
+
+}
+int Player::coins() {
+    return 0;
+}
+string Player::role() {
+    return "";
+}
+void Player::income() {
+    
+}
+void Player::foreign_aid() {
+
+}
+void Player::coup(Player p) {
+    
+}

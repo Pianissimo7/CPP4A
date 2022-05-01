@@ -1,4 +1,5 @@
-#include "Player.cpp"
+#include <string>
+#pragma once
 
 namespace coup {
     class Player {

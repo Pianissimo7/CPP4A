@@ -1,4 +1,6 @@
-#include "Game.cpp"
+#include <string>
+#include <vector>
+#pragma once
 
 namespace coup {
     class Game {

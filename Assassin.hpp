@@ -1,4 +1,5 @@
-#include "Assassin.cpp"
+#include <string>
+#include "Player.hpp"
 
 namespace coup {
     class Assassin : public Player {

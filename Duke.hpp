@@ -1,4 +1,6 @@
-#include "Duke.cpp"
+#include <string>
+#include "Player.hpp"
+#include "Game.hpp"
 
 namespace coup {
     class Duke : public Player {
