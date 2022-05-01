@@ -1,14 +1,14 @@
 #include "Game.cpp"
 
 namespace coup {
-    class Player {
+    class Game {
         public:
             Game();
             ~Game();
-            string turn = "";
-            vector<string> players;
-            string turn();
-            vector<string> players();
-            void add_player(string name);
-    }
+            std::string Turn = "";
+            std::vector<std::string> Players;
+            std::string turn();
+            std::vector<std::string> players();
+            void add_player(std::string name);
+    };
 }
